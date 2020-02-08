@@ -7,7 +7,7 @@ const userSchema = new Schema({
   password: String
 });
 userSchema.methods.comparePassword = (userPassword, cb) => {
-  bcrypt.compare(userPassword, password, (err, isMatch) => {
+  bcrypt.compare(userPassword, this.password, (err, isMatch) => {
     cb(err, isMatch);
   });
 };
